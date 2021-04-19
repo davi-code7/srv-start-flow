@@ -34,7 +34,7 @@ async function publishTop() {
         }),
         'start-flow',
         'startFlow',
-        'arn:aws:sns:us-east-1:303732912389:sns-start-flow.fifo',
+        'arn:aws:sns:us-east-1:742104988707:sns-start-flow.fifo',
       );
 
       if (

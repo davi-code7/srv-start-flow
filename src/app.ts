@@ -25,7 +25,7 @@ async function publishTop() {
     });
 
     queues.forEach(async (queue) => {
-      await snsSqsSlq.publishToTopic(
+      const publish = await snsSqsSlq.publishToTopic(
         'sns-start-flow',
         JSON.stringify({
           id_load: queue.load.id_load,
@@ -36,6 +36,8 @@ async function publishTop() {
         'startFlow',
         'arn:aws:sns:us-east-1:742104988707:sns-start-flow.fifo',
       );
+
+      console.log(publish);
 
       if (
         process.env.NODE_ENV === 'production'
